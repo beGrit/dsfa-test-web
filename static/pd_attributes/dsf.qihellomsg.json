@@ -1,0 +1,23 @@
+[
+  {
+      "name": "基础属性",
+      "attributes": [
+          {
+              "text": "是否可见",
+              "showType": "boolean",
+              "bindControlAttr": "visible"
+          },
+          {
+            "text": "内容",
+            "showType": "dialog",
+            "config": {
+                "width": "900px",
+                "content": "DesQuestionConfig",
+                "buttonText": "编辑选项",
+                "title": "编辑选项",
+                "text": "编辑欢迎语"
+            }
+          }
+      ]
+  }
+]

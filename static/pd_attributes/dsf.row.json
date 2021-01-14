@@ -1,0 +1,31 @@
+[{
+  "name": "基础属性",
+  "attributes": [{
+      "text": "栅格配置",
+      "bindControlAttr": "",
+      "showType": "dialog",
+      "config": {
+        "width":"1200px",
+        "height": "60vh",
+        "content": "DesFlexGrid"
+      }
+    },
+    {
+      "text": "行高度",
+      "bindControlAttr": "height",
+      "showType": "text",
+      "desc": ""
+    },
+    {
+      "text": "栅格最小高度",
+      "bindControlAttr": "minHeight",
+      "showType": "text",
+      "desc": "<p>设置栅格布局中每格占位的最小高度单位为px，默认为0px当栅格内没有内容是不会占位<p>"
+    },
+    {
+      "text": "栅格间隙",
+      "bindControlAttr": "gutter",
+      "showType": "number"
+    }
+  ]
+}]

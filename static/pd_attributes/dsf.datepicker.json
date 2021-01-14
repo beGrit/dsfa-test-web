@@ -1,0 +1,431 @@
+[
+  {
+    "name": "基础属性",
+    "attributes": [
+      {
+        "text": "组件标识",
+        "bindControlAttr": "caption",
+        "showType": "text"
+      },
+      {
+        "text": "名称",
+        "bindControlAttr": "label",
+        "showType": "text"
+      },
+      {
+        "text": "提示文字",
+        "bindControlAttr": "placeholder",
+        "showType": "text"
+      },
+      {
+        "text": "名称是否显示",
+        "bindControlAttr": "showLabel",
+        "showType": "boolean"
+      },
+      {
+        "text": "是否只读",
+        "showType": "boolean",
+        "bindControlAttr": "readOnly"
+      },
+      {
+        "text": "是否失效",
+        "showType": "boolean",
+        "bindControlAttr": "disabled"
+      },
+      {
+        "text": "是否可见",
+        "showType": "boolean",
+        "bindControlAttr": "visible"
+      },
+      {
+        "text": "取消上下边距",
+        "bindControlAttr": "tbNoPadding",
+        "showType": "boolean"
+      },
+      {
+        "text": "只读状态简版",
+        "showType": "boolean",
+        "bindControlAttr": "simple",
+        "desc": "<p>简化组件只读状态时的元素。如果组件在子表中加载可以有效提升表格性能<p>"
+      },
+      {
+        "text": "只读状态下格式化",
+        "showType": "select",
+        "bindControlAttr": "formatter",
+        "desc": "<p>只读状态下格式化<p>",
+        "dictionary": [
+          {
+            "text": "无",
+            "value": ""
+          },
+          {
+            "text": "(年)-(月)-(日) (时):(分)",
+            "value": "dateTime^yyyy-mm-dd hh:ii"
+          },
+          {
+            "text": "(年)-(月)-(日)",
+            "value": "dateTime^yyyy-mm-dd"
+          },
+          {
+            "text": "(年)-(月)",
+            "value": "dateTime^yyyy-mm"
+          },
+          {
+            "text": "(年)",
+            "value": "dateTime^yyyy"
+          },
+          {
+            "text": "(年)年(月)月(日)日(时):(分)",
+            "value": "dateTime^yyyy年m月d日hh:ii"
+          },
+          {
+            "text": "(年)年(月)月(日)日(时)点(分)分",
+            "value": "dateTime^yyyy年m月d日h点i分"
+          },
+          {
+            "text": "(年)年(月)月(日)日",
+            "value": "dateTime^yyyy年m月d日"
+          },
+          {
+            "text": "(年)年(月)月",
+            "value": "dateTime^yyyy年m月"
+          },
+          {
+            "text": "(年)年",
+            "value": "dateTime^yyyy年"
+          },
+          {
+            "text": "时:分",
+            "value": "dateTime^hh:ii"
+          },
+          {
+            "text": "(时)点(分)分",
+            "value": "dateTime^h点i分"
+          }
+        ]
+      },
+      {
+        "text": "描述文字(仅移动端有效)",
+        "showType": "text",
+        "bindControlAttr": "dataCapion",
+        "desc": "<p>移动端运行该组件时会在名称后追加一段备注文字。</p><p>因布局上的问题PC端赞不支持</p>"
+      },
+      {
+        "text": "语音地址(仅移动端有效)",
+        "showType": "text",
+        "bindControlAttr": "dataAudioUrl",
+        "desc": "<p>移动端运行该组件时会在名称后追加一个图标，点击后播放MP3。</p><p>因布局上的问题PC端赞不支持</p>"
+      },
+      {
+        "text": "视频地址(仅移动端有效)",
+        "showType": "text",
+        "bindControlAttr": "dataVideoUrl",
+        "desc": "<p>移动端运行该组件时会在名称后追加一个图标，点击后播放MP4。</p><p>因布局上的问题PC端赞不支持<p>"
+      }
+    ]
+  },
+  {
+    "name": "控件属性",
+    "attributes": [
+      {
+        "text": "时间显示格式",
+        "showType": "select",
+        "bindControlAttr": "timeFormat",
+        "dictionary": [
+          {
+            "value": "yyyy-MM-dd",
+            "text": "yyyy-MM-dd"
+          },
+          {
+            "value": "yyyy年MM月dd日",
+            "text": "yyyy年MM月dd日"
+          },
+          {
+            "value": "yyyy年MM月",
+            "text": "yyyy年MM月"
+          },
+          {
+            "value": "M月d日",
+            "text": "M月d日"
+          },
+          {
+            "value": "yyyy年",
+            "text": "yyyy年"
+          }
+        ]
+      },
+      {
+        "text": "日期选择器类型",
+        "showType": "select",
+        "bindControlAttr": "chooseType",
+        "dictionary": [
+          {
+            "value": "date",
+            "text": "日期"
+          },
+          {
+            "value": "year",
+            "text": "年"
+          },
+          {
+            "value": "month",
+            "text": "年月"
+          },
+          {
+            "value": "datetime",
+            "text": "日期时间"
+          },
+          {
+            "value": "datetime_s",
+            "text": "日期时间(显示秒)"
+          }
+        ]
+      },
+      {
+        "text": "是否显示清除按钮",
+        "showType": "boolean",
+        "bindControlAttr": "clearable"
+      },
+      {
+        "text": "显示小时段",
+        "showType": "timePicker",
+        "bindControlAttr": "timeInter",
+        "attributes": {
+          "isRange": true,
+          "rangeSeparator": "至",
+          "startPlaceholder": "开始时间",
+          "endPlaceholder": "结束时间",
+          "placeholder": "选择时间范围",
+          "clearable": false
+        }
+      },
+      {
+        "text": "是否可输入日期",
+        "showType": "boolean",
+        "bindControlAttr": "isInput"
+      },
+      {
+        "text": "弹框时间选择步骤",
+        "showType": "select",
+        "bindControlAttr": "pickerStepType",
+        "hidden": "@[chooseType] !== 'year' && @[chooseType] !== 'month'",
+        "dictionary": [
+          {
+            "value": 0,
+            "text": "默认直接选择日"
+          },
+          {
+            "value": 1,
+            "text": "年→月→日"
+          }
+        ]
+      },
+      {
+        "text": "弹框时间选择步骤",
+        "showType": "select",
+        "bindControlAttr": "pickerStepType",
+        "hidden": "@[chooseType] === 'month'",
+        "dictionary": [
+          {
+            "value": 0,
+            "text": "默认直接选择月"
+          },
+          {
+            "value": 1,
+            "text": "年→月"
+          }
+        ]
+      },
+      {
+        "text": "弹框初始时间",
+        "showType": "datePicker",
+        "bindControlAttr": "pickerInitDate",
+        "attributes": {
+          "type": "month",
+          "placeholder": "默认为当前日期"
+        }
+      }
+    ]
+  },
+  {
+    "name": "可选日期范围设置",
+    "attributes": [
+      {
+        "text": "起始日期设置",
+        "showType": "select",
+        "bindControlAttr": "selectStartType",
+        "dictionary": [
+          {
+            "value": 0,
+            "text": "无限制"
+          },
+          {
+            "value": 1,
+            "text": "当前日期"
+          },
+          {
+            "value": 2,
+            "text": "固定日期"
+          },
+          {
+            "value": 3,
+            "text": "动态日期(根据天数)"
+          },
+          {
+            "value": 4,
+            "text": "动态日期(根据月数)"
+          },
+          {
+            "value": 5,
+            "text": "动态日期(根据年数)"
+          }
+        ]
+      },
+      {
+        "text": "结束日期设置",
+        "showType": "select",
+        "bindControlAttr": "selectEndType",
+        "dictionary": [
+          {
+            "value": 0,
+            "text": "无限制"
+          },
+          {
+            "value": 1,
+            "text": "当前日期"
+          },
+          {
+            "value": 2,
+            "text": "固定日期"
+          },
+          {
+            "value": 3,
+            "text": "动态日期(根据天数)"
+          },
+          {
+            "value": 4,
+            "text": "动态日期(根据月数)"
+          },
+          {
+            "value": 5,
+            "text": "动态日期(根据年数)"
+          }
+        ]
+      },
+      {
+        "text": "固定起始日期",
+        "showType": "datePicker",
+        "bindControlAttr": "selectStartDate",
+        "hidden": "@[selectStartType] === 2",
+        "attributes": {
+          "type": "date",
+          "placeholder": "默认为当前日期"
+        }
+      },
+      {
+        "text": "动态起始日期(根据天数)",
+        "showType": "number",
+        "bindControlAttr": "selectStartDateByDays",
+        "hidden": "@[selectStartType] === 3",
+        "desc": "<p>根据当前日期往前或往后推多少天，默认为0</p>"
+      },
+      {
+        "text": "动态起始日期(根据月数)",
+        "showType": "number",
+        "bindControlAttr": "selectStartDateByMonths",
+        "hidden": "@[selectStartType] === 4",
+        "desc": "<p>根据当前日期往前或往后推多少月，默认为0</p>"
+      },
+      {
+        "text": "动态起始日期(根据年数)",
+        "showType": "number",
+        "bindControlAttr": "selectStartDateByYears",
+        "hidden": "@[selectStartType] === 5",
+        "desc": "<p>根据当前日期往前或往后推多少年，默认为0</p>"
+      },
+      {
+        "text": "固定结束日期",
+        "showType": "datePicker",
+        "bindControlAttr": "selectEndDate",
+        "hidden": "@[selectEndType] === 2",
+        "attributes": {
+          "type": "date",
+          "placeholder": "默认为当前日期"
+        }
+      },
+      {
+        "text": "动态结束日期(根据天数)",
+        "showType": "number",
+        "bindControlAttr": "selectEndDateByDays",
+        "hidden": "@[selectEndType] === 3",
+        "desc": "<p>根据当前日期往前或往后推多少天，默认为0</p>"
+      },
+      {
+        "text": "动态结束日期(根据月数)",
+        "showType": "number",
+        "bindControlAttr": "selectEndDateByMonths",
+        "hidden": "@[selectEndType] === 4",
+        "desc": "<p>根据当前日期往前或往后推多少月，默认为0</p>"
+      },
+      {
+        "text": "动态结束日期(根据年数)",
+        "showType": "number",
+        "bindControlAttr": "selectEndDateByYears",
+        "hidden": "@[selectEndType] === 5",
+        "desc": "<p>根据当前日期往前或往后推多少年，默认为0</p>"
+      }
+    ]
+  },
+  {
+    "name": "高级属性",
+    "attributes": [
+      {
+        "text": "默认值",
+        "bindControlAttr": "metadata.defaultValue",
+        "showType": "dialog",
+        "config": {
+          "width": "500px",
+          "content": "DesDefaultValue",
+          "value": [
+            { "text": "日期", "code": "date", "value": "" }
+          ]
+        },
+        "desc": "<p>当前组件在页面中初始化后显示的值，可支持@[xxxx]形式的表达式</p><p>@[now()] 为当前日期</p><p>@[addMonth(now(), -1)] 为当前日期往前推一个月</p>"
+      },
+      {
+        "text": "必填标识",
+        "bindControlAttr": "required",
+        "showType": "boolean",
+        "desc": "<p>当前组件名称前显示<span style='color:red'>*</span>号，但与实际逻辑上是否必填无关</p>"
+      },
+      {
+        "text": "校验规则",
+        "bindControlAttr": "metadata.validate",
+        "showType": "dialog",
+        "config": {
+          "content": "DesValidateRule",
+          "width": "800px",
+          "height": "60vh",
+          "buttonText": "设置",
+          "title": "设置"
+        }
+      },
+      {
+        "text": "描述文字",
+        "showType": "text",
+        "bindControlAttr": "dataCapion",
+        "desc": "<p>移动端运行该组件时会在名称后追加一段备注文字。</p><p>因布局上的问题PC端暂不支持</p>"
+      },
+      {
+        "text": "是否可以提交",
+        "bindControlAttr": "allowPost",
+        "showType": "boolean"
+      },
+      {
+        "text": "是否即时触发审核",
+        "bindControlAttr": "immediatelyAudit",
+        "showType": "boolean"
+      }
+    ]
+  }
+]

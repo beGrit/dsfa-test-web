@@ -1,0 +1,49 @@
+[
+  {
+    "name": "基础属性",
+    "attributes": [
+      {
+        "text": "组件标识",
+        "bindControlAttr": "caption",
+        "showType": "text"
+      },
+      {
+        "text": "名称",
+        "bindControlAttr": "label",
+        "showType": "text",
+        "changeExecFunction": "renderContext"
+      },
+      {
+        "text": "提示文字",
+        "bindControlAttr": "placeholder",
+        "showType": "text"
+      },
+      {
+        "text": "名称是否显示",
+        "bindControlAttr": "showLabel",
+        "showType": "boolean"
+      },
+      {
+        "text": "是否失效",
+        "showType": "boolean",
+        "bindControlAttr": "disabled"
+      },
+      {
+        "text": "是否可见",
+        "showType": "boolean",
+        "bindControlAttr": "visible"
+      },
+      {
+        "text": "取消上下边距",
+        "bindControlAttr": "tbNoPadding",
+        "showType": "boolean"
+      },
+      {
+        "text": "描述文字",
+        "showType": "text",
+        "bindControlAttr": "dataCapion",
+        "desc": "<p>移动端运行该组件时会在名称后追加一段备注文字。</p><p>因布局上的问题PC端暂不支持</p>"
+      }
+    ]
+  }
+]

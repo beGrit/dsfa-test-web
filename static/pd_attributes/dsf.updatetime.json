@@ -1,0 +1,49 @@
+[
+  {
+    "name": "基础属性",
+    "attributes": [
+      {
+        "text": "组件标识",
+        "bindControlAttr": "caption",
+        "showType": "text",
+        "config": {
+          "disabled": true
+        }
+      },
+      {
+        "text": "名称",
+        "bindControlAttr": "label",
+        "showType": "text"
+      },
+      {
+        "text": "只读状态下格式化",
+        "showType": "select",
+        "bindControlAttr": "formatter",
+        "desc": "<p>只读状态下格式化<p>",
+        "dictionary": [{
+            "text": "年-月-日 时:分",
+            "value": "dateTime^yyyy-mm-dd hh:ii"
+          },
+          {
+            "text": "年-月-日",
+            "value": "dateTime^yyyy-mm-dd"
+          },
+          {
+            "text": "时:分",
+            "value": "dateTime^hh:ii"
+          }
+        ]
+      },
+      {
+        "text": "名称是否显示",
+        "bindControlAttr": "showLabel",
+        "showType": "boolean"
+      },
+      {
+        "text": "是否可见",
+        "showType": "boolean",
+        "bindControlAttr": "visible"
+      }
+    ]
+  }
+]

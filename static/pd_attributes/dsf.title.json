@@ -1,0 +1,117 @@
+[
+  {
+    "name": "基础属性",
+    "attributes": [
+      {
+        "text": "组件标识",
+        "bindControlAttr": "caption",
+        "showType": "text"
+      },
+      {
+        "text": "内容",
+        "bindControlAttr": "value",
+        "showType": "text"
+      },
+      {
+        "text": "字号大小",
+        "bindControlAttr": "fontType",
+        "showType": "select",
+        "dictionary": [
+          {
+            "text": "标题1",
+            "value": 1
+          },
+          {
+            "text": "标题2",
+            "value": 2
+          },
+          {
+            "text": "标题3",
+            "value": 3
+          },
+          {
+            "text": "标题4",
+            "value": 4
+          },
+          {
+            "text": "标题5",
+            "value": 5
+          },
+          {
+            "text": "标题6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "text": "是否显示色块",
+        "bindControlAttr": "showColorLump",
+        "showType": "boolean"
+      },
+      {
+        "text": "是否显示下划线",
+        "bindControlAttr": "showUnderline",
+        "showType": "boolean"
+      },
+      {
+        "text": "是否加粗",
+        "bindControlAttr": "showWeight",
+        "showType": "boolean"
+      },
+      {
+        "text": "水平对齐",
+        "bindControlAttr": "textAlign",
+        "showType": "select",
+        "dictionary": [
+          {
+            "text": "居左",
+            "value": ""
+          },
+          {
+            "text": "居中",
+            "value": "text-center"
+          },
+          {
+            "text": "居右",
+            "value": "text-right"
+          }
+        ]
+      },
+      {
+        "text": "字体设置",
+        "bindControlAttr": "fontFamily",
+        "showType": "select",
+        "dictionary": [
+          {
+            "text": "系统自带",
+            "value": ""
+          },
+          {
+            "text": "宋体",
+            "value": "st"
+          },
+          {
+            "text": "仿宋",
+            "value": "fs"
+          },
+          {
+            "text": "楷书",
+            "value": "ks"
+          },
+          {
+            "text": "黑体",
+            "value": "ht"
+          },
+          {
+            "text": "微软雅黑",
+            "value": "wryh"
+          },
+          {
+            "text": "幼圆",
+            "value": "yy"
+          }
+        ]
+      }
+    ]
+  }
+]
