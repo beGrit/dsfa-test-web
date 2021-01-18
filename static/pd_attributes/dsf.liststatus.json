@@ -1,6 +1,8 @@
-[{
+[
+  {
     "name": "基础属性",
-    "attributes": [{
+    "attributes": [
+      {
         "text": "组件标识",
         "bindControlAttr": "caption",
         "showType": "text"
@@ -16,7 +18,7 @@
         }
       },
       {
-        "text": "二次开发配置",
+        "text": "动态属性绑定",
         "bindControlAttr": "development",
         "showType": "dialog",
         "config": {
@@ -26,4 +28,5 @@
         }
       }
     ]
-  }]
+  }
+]

@@ -5,32 +5,38 @@
       {
         "text": "组件标识",
         "bindControlAttr": "caption",
-        "showType": "text"
+        "showType": "text",
+        "inCommonUse": true
       },
       {
         "text": "标题",
         "showType": "text",
-        "bindControlAttr": "label"
+        "bindControlAttr": "label",
+        "inCommonUse": true
       },
       {
         "text": "是否要显示标题",
         "showType": "boolean",
-        "bindControlAttr": "showLabel"
+        "bindControlAttr": "showLabel",
+        "inCommonUse": true
       },
       {
         "text": "标题是否带显示色块",
         "showType": "boolean",
-        "bindControlAttr": "labelShowColorLump"
+        "bindControlAttr": "labelShowColorLump",
+        "inCommonUse": true
       },
       {
         "text": "标题是否带显示下划线",
         "showType": "boolean",
-        "bindControlAttr": "labelShowUnderline"
+        "bindControlAttr": "labelShowUnderline",
+        "inCommonUse": true
       },
       {
         "text": "是否只读",
         "showType": "boolean",
-        "bindControlAttr": "readOnly"
+        "bindControlAttr": "readOnly",
+        "inCommonUse": true
       },
       {
         "text": "行编辑启用",
@@ -50,30 +56,37 @@
       {
         "text": "是否可见",
         "showType": "boolean",
-        "bindControlAttr": "visible"
+        "bindControlAttr": "visible",
+        "inCommonUse": true
       },
       {
         "text": "表头设置",
         "showType": "dialog",
         "bindControlAttr": "columns",
+        "inCommonUse": true,
         "config": {
           "title": "表头设置",
           "content": "DesColumnsEdit",
           "width": "1000px",
           "height": "60vh",
           "slotName": "default",
-          "buttonText": "设置"
+          "buttonText": "设置",
+          "params": {
+            "isSubTable":true
+          }
         }
       },
       {
         "text": "是否需要分页",
         "showType": "boolean",
-        "bindControlAttr": "showPagination"
+        "bindControlAttr": "showPagination",
+        "inCommonUse": true
       },
       {
         "text": "每页显示行数",
         "showType": "number",
-        "bindControlAttr": "pageSize"
+        "bindControlAttr": "pageSize",
+        "inCommonUse": true
       },
       {
         "text": "按钮设置",
@@ -83,23 +96,55 @@
           "content": "DesButtonEdit",
           "width": "1400px",
           "height": "60vh"
-        }
+        },
+        "inCommonUse": true
       },
-
+      {
+        "text": "最大按钮数量",
+        "bindControlAttr": "buttonsMaxNumber",
+        "showType": "number",
+        "config": {
+          "min": 1
+        },
+        "inCommonUse": true
+      },
+      {
+        "text": "更多按钮形态",
+        "showType": "select",
+        "bindControlAttr": "buttonsMoreButtonStyle",
+        "dictionary": [
+          {
+            "text": "图标",
+            "value": "icon-text"
+          },
+          {
+            "text": "普通按钮",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "text": "更多按钮文字",
+        "showType": "text",
+        "bindControlAttr": "buttonsMoreButonText"
+      },
       {
         "text": "允许排序",
         "showType": "boolean",
-        "bindControlAttr": "isOrder"
+        "bindControlAttr": "isOrder",
+        "inCommonUse": true
       },
       {
         "text": "显示Checkbox",
         "showType": "boolean",
-        "bindControlAttr": "$isShowCheckboxColumn"
+        "bindControlAttr": "$isShowCheckboxColumn",
+        "inCommonUse": true
       },
       {
         "text": "显示操作列",
         "showType": "boolean",
-        "bindControlAttr": "isShowOperateColumn"
+        "bindControlAttr": "isShowOperateColumn",
+        "inCommonUse": true
       },
       {
         "text": "粘贴数据解析段落格式",
@@ -114,10 +159,10 @@
     ]
   },
   {
-    "name":"高级属性",
-    "attributes":[
+    "name": "高级属性",
+    "attributes": [
       {
-        "text": "二次开发配置",
+        "text": "动态属性绑定",
         "bindControlAttr": "development",
         "showType": "dialog",
         "config": {
@@ -125,6 +170,17 @@
           "width": "1000px",
           "height": "60vh"
         }
+      },
+      {
+        "text": "导出配置",
+        "bindControlAttr": "exportOptions",
+        "showType": "dialog",
+        "config":{
+          "content":"DesExportOptions",
+          "width": "1300px",
+          "height": "60vh"
+        },
+        "inCommonUse": true
       },
       {
         "text": "描述文字",

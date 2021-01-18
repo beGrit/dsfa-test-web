@@ -34,15 +34,49 @@
         "bindControlAttr": "visible"
       },
       {
+        "text": "上传附件按钮是否显示",
+        "showType": "boolean",
+        "bindControlAttr": "visibleUpBtn"
+      },
+      {
+        "text": "快捷回复按钮是否显示",
+        "showType": "boolean",
+        "bindControlAttr": "visibleOptionsBtn"
+      },
+      {
         "text": "取消上下边距",
         "bindControlAttr": "tbNoPadding",
         "showType": "boolean"
+      },
+      {
+        "text": "是否是textarea标签",
+        "showType": "boolean",
+        "bindControlAttr": "isTextarea"
+      },
+      {
+        "text": "textarea行数",
+        "showType": "number",
+        "bindControlAttr": "textareaRows",
+        "showExpress": "@[isTextarea] == true",
+        "config": {
+          "min": 1
+        }
       },
       {
         "text": "描述文字",
         "showType": "text",
         "bindControlAttr": "dataCapion",
         "desc": "<p>移动端运行该组件时会在名称后追加一段备注文字。</p><p>因布局上的问题PC端暂不支持</p>"
+      },
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
       }
     ]
   }

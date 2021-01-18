@@ -1,28 +1,31 @@
 [
-
   {
     "name": "基础属性",
-    "attributes": [{
+    "attributes": [
+      {
         "text": "组件标识",
         "bindControlAttr": "caption",
-        "showType": "text"
+        "showType": "text",
+        "inCommonUse": true
       },
       {
         "text": "标题",
         "showType": "text",
-        "bindControlAttr": "label"
+        "bindControlAttr": "label",
+        "inCommonUse": true
       },
       {
         "text": "搜索框提示文字",
         "showType": "text",
-        "bindControlAttr": "searchPlaceholder"
+        "bindControlAttr": "searchPlaceholder",
+        "inCommonUse": true
       },
       {
         "text": "自适应父容器",
         "showType": "boolean",
-        "bindControlAttr": "fit"
+        "bindControlAttr": "fit",
+        "inCommonUse": true
       },
-
       {
         "text": "按钮栏设置",
         "showType": "dialog",
@@ -31,71 +34,91 @@
           "content": "DesButtonEdit",
           "width": "1400px",
           "height": "60vh"
-        }
+        },
+        "inCommonUse": true
+      },
+      {
+        "text": "最大按钮数量",
+        "bindControlAttr": "buttonsMaxNumber",
+        "showType": "number",
+        "config": {
+          "min": 1
+        },
+        "inCommonUse": true
+      },
+      {
+        "text": "按钮栏更多按钮形态",
+        "showType": "select",
+        "bindControlAttr": "buttonsMoreStyle",
+        "dictionary": [
+          {
+            "text": "图标",
+            "value": "icon-text"
+          },
+          {
+            "text": "普通按钮",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "text": "按钮栏更多按钮文字",
+        "showType": "text",
+        "bindControlAttr": "buttonsMoreText"
+      },
+      {
+        "text": "按钮栏位置",
+        "bindControlAttr": "buttonBarPosition",
+        "showType": "select",
+        "dictionary": [
+          {
+            "text": "头部",
+            "value": "head"
+          },
+          {
+            "text": "高级检索右侧",
+            "value": "superSearchRight"
+          }
+        ],
+        "inCommonUse": true
       },
       {
         "text": "显示面板头部",
         "showType": "boolean",
-        "bindControlAttr": "showHead"
+        "bindControlAttr": "showHead",
+        "inCommonUse": true
       },
       {
         "text": "显示标题",
         "showType": "boolean",
-        "bindControlAttr": "showTitle"
+        "bindControlAttr": "showTitle",
+        "inCommonUse": true
       },
       {
         "text": "是否显示检索框",
         "showType": "boolean",
-        "bindControlAttr": "showSearch"
+        "bindControlAttr": "showSearch",
+        "inCommonUse": true
       },
       {
         "text": "是否显示checkbox列",
         "showType": "boolean",
-        "bindControlAttr": "checkboxColumn.show"
+        "bindControlAttr": "checkboxColumn.show",
+        "inCommonUse": true
       },
       {
         "text": "是否仅单选",
         "showType": "boolean",
         "bindControlAttr": "isSingleChecked",
-        "hidden": "@[checkboxColumn.show]===true"
-      },
-      {
-        "text": "是否显示索引列",
-        "showType": "boolean",
-        "bindControlAttr": "indexColumn.show"
-      },
-      {
-        "text": "是否显示操作按钮",
-        "showType": "boolean",
-        "bindControlAttr": "operateColumn.show"
-      },
-      {
-        "text": "显示分页(最多显示100条)",
-        "showType": "boolean",
-        "bindControlAttr": "showPagination",
-        "class": "showPagination"
-      },
-      {
-        "text": "每页显示条数(逗号分隔)",
-        "showType": "text",
-        "bindControlAttr": "limits",
-        "dataType": "Number[]",
-        "splitChart": ",",
-        "changeExecFunction": "renderPagination",
-        "hidden": "@[showPagination]===true"
-      },
-      {
-        "text": "自定义分页排版(逗号分隔)",
-        "showType": "text",
-        "bindControlAttr": "pagerLayout",
-        "hidden": "@[showPagination]===true"
+        "showExpress": "@[checkboxColumn.show]===true",
+        "inCommonUse": true
       }
-
     ]
   },
   {
     "name": "数据查询属性",
-    "attributes": [{
+    "attributes": [
+      {
         "text": "挂载后立即请求数据",
         "showType": "boolean",
         "bindControlAttr": "mountedRequestData"
@@ -110,7 +133,8 @@
           "width": "1000px",
           "height": "60vh",
           "buttonText": "设置"
-        }
+        },
+        "inCommonUse": true
       },
       {
         "text": "高级查询设置",
@@ -118,11 +142,18 @@
         "bindControlAttr": "superSearchInfo",
         "config": {
           "title": "高级查询设置",
-          "content":"DesSuperSearchSetting",
+          "content": "DesSuperSearchSetting",
           "width": "90vw",
           "height": "60vh",
           "buttonText": "设置"
-        }
+        },
+        "inCommonUse": true
+      },
+      {
+        "text": "通过按钮触发高级查询",
+        "showType": "boolean",
+        "bindControlAttr": "superSearchButtonTrigger",
+        "inCommonUse": true
       },
       {
         "text": "高级检索是否显示筛选栏",
@@ -132,7 +163,8 @@
       {
         "text": "高级查询默认初始化行数",
         "showType": "number",
-        "bindControlAttr": "superSearchDefaultRowsNumber"
+        "bindControlAttr": "superSearchDefaultRowsNumber",
+        "inCommonUse": true
       },
       {
         "text": "高级查询行间隔线",
@@ -145,11 +177,12 @@
         "bindControlAttr": "defaultOrder",
         "config": {
           "title": "排序栏设置",
-          "content":"DesListOrderByEdit",
+          "content": "DesListOrderByEdit",
           "width": "1170px",
           "height": "60vh",
           "buttonText": "设置"
-        }
+        },
+        "inCommonUse": true
       },
       {
         "text": "自定义排序",
@@ -157,44 +190,29 @@
         "bindControlAttr": "customerOrder",
         "config": {
           "title": "排序栏设置",
-          "content":"DesCustomerOrderByEdit",
+          "content": "DesCustomerOrderByEdit",
           "width": "1170px",
           "height": "60vh",
           "buttonText": "设置"
-        }
+        },
+        "inCommonUse": true
       }
     ]
   },
   {
-    "name": "列表属性",
-    "attributes": [{
-        "text": "简化输出",
-        "showType": "boolean",
-        "bindControlAttr": "tableTextProxy",
-        "desc": "提高表格输出性能，简化后在二次开发中无法获取单元格中组件实例"
-      },
+    "name": "通用属性",
+    "attributes": [
       {
-        "text": "索引列宽度",
-        "showType": "text",
-        "bindControlAttr": "indexColumn.width"
-      },
-      {
-        "text": "表头设置",
+        "text": "数据展示方式",
         "showType": "dialog",
-        "bindControlAttr": "columns",
+        "bindControlAttr": "layoutInfo",
         "config": {
-          "title": "表头设置",
-          "content": "DesColumnsEdit",
-          "width": "1000px",
-          "height": "60vh",
-          "slotName": "default",
-          "buttonText": "设置"
-        }
-      },
-      {
-        "text": "操作列宽度",
-        "showType": "text",
-        "bindControlAttr": "operateColumn.width"
+          "title": "数据展示方式设置",
+          "content": "DesDataGridLayoutSetting",
+          "width": "1100px",
+          "height": "60vh"
+        },
+        "inCommonUse": true
       },
       {
         "text": "数据行按钮设置",
@@ -209,46 +227,134 @@
             "defaultShowText": false,
             "defaultButtonStyle": "icon-text"
           }
-        }
+        },
+        "inCommonUse": true
+      },
+      {
+        "text": "数据行按钮最大数量",
+        "bindControlAttr": "rowButtonsMaxNumber",
+        "showType": "number",
+        "config": {
+          "min": 1
+        },
+        "inCommonUse": true
+      },
+      {
+        "text": "数据行更多按钮形态",
+        "showType": "select",
+        "bindControlAttr": "rowButtonsMoreStyle",
+        "dictionary": [
+          {
+            "text": "图标",
+            "value": "icon-text"
+          },
+          {
+            "text": "普通按钮",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "text": "数据行更多按钮文字",
+        "showType": "text",
+        "bindControlAttr": "rowButtonsMoreText"
+      },
+      {
+        "text": "显示分页(最多显示100条)",
+        "showType": "boolean",
+        "bindControlAttr": "showPagination",
+        "class": "showPagination",
+        "inCommonUse": true
+      },
+      {
+        "text": "每页显示条数(逗号分隔)",
+        "showType": "text",
+        "bindControlAttr": "limits",
+        "dataType": "Number[]",
+        "splitChart": ",",
+        "changeExecFunction": "renderPagination",
+        "showExpress": "@[showPagination]===true",
+        "inCommonUse": true
+      },
+      {
+        "text": "自定义分页排版(逗号分隔)",
+        "showType": "text",
+        "bindControlAttr": "pagerLayout",
+        "showExpress": "@[showPagination]===true",
+        "inCommonUse": true
+      },
+      {
+        "text": "是否滚动加载",
+        "showType": "boolean",
+        "bindControlAttr": "scrollLoad",
+        "showExpress": "@[showPagination]===false",
+        "desc": "table表格不支持滚动加载，开启滚动加载后将隐藏table<br/>如果只有table，则此属性无效。",
+        "inCommonUse": true
+      },
+      {
+        "text": "滚动加载一次多少条数据",
+        "showType": "number",
+        "bindControlAttr": "scrollPageSize",
+        "showExpress": "@[showPagination]===false && @[scrollLoad]===true",
+        "config": {
+          "min": 1,
+          "max": 200
+        },
+        "inCommonUse": true
+      }
+    ]
+  },
+  {
+    "name": "table属性",
+    "attributes": [
+      {
+        "text": "简化输出",
+        "showType": "boolean",
+        "bindControlAttr": "tableTextProxy",
+        "desc": "提高表格输出性能，简化后在二次开发中无法获取单元格中组件实例"
+      },
+      {
+        "text": "是否显示索引列",
+        "showType": "boolean",
+        "bindControlAttr": "indexColumn.show",
+        "inCommonUse": true
+      },
+      {
+        "text": "索引列宽度",
+        "showType": "text",
+        "bindControlAttr": "indexColumn.width"
+      },
+      {
+        "text": "是否显示操作按钮",
+        "showType": "boolean",
+        "bindControlAttr": "operateColumn.show",
+        "inCommonUse": true
+      },
+      {
+        "text": "操作列宽度",
+        "showType": "text",
+        "bindControlAttr": "operateColumn.width",
+        "inCommonUse": true
+      },
+      {
+        "text": "表头设置",
+        "showType": "dialog",
+        "bindControlAttr": "columns",
+        "config": {
+          "title": "表头设置",
+          "content": "DesColumnsEdit",
+          "width": "1000px",
+          "height": "60vh",
+          "slotName": "default",
+          "buttonText": "设置"
+        },
+        "inCommonUse": true
       }
     ]
   },
   {
     "name": "高级属性",
-    "attributes": [{
-        "text": "数据展示方式",
-        "showType": "checkbox",
-        "bindControlAttr": "showType",
-        "dictionary": [{
-          "text": "列表",
-          "value": "list",
-          "checked": true
-        }, {
-          "text": "卡片",
-          "value": "card"
-        }, {
-          "text": "概述列表",
-          "value": "img_list"
-        }]
-      },
-      {
-        "text": "卡片模式使用分页条",
-        "showType": "boolean",
-        "bindControlAttr": "cardShowPag",
-        "changeExecFunction": "changeCardPag"
-      },
-      {
-        "text": "概览列表项边框",
-        "bindControlAttr": "$imgListBorder",
-        "changeExecFunction": "render",
-        "showType": "boolean"
-      },
-      {
-        "text": "概览列表项圆角",
-        "bindControlAttr": "$imgListBorderRadius",
-        "changeExecFunction": "render",
-        "showType": "boolean"
-      },
+    "attributes": [
       {
         "text": "浏览范围",
         "showType": "dialog",
@@ -260,25 +366,31 @@
           "height": "60vh",
           "buttonText": "设置",
           "class": "browseScope"
-        }
+        },
+        "inCommonUse": true
       },
       {
-        "text": "二次开发配置",
+        "text": "动态属性绑定",
         "bindControlAttr": "development",
         "showType": "dialog",
         "config": {
           "content": "DesDevelopment",
           "width": "1000px",
           "height": "60vh"
-        }
+        },
+        "inCommonUse": true
       },
       {
-        "text": "卡片布局宽度",
-        "bindControlAttr": "$cardWidth",
-        "changeExecFunction": "resize",
-        "showType": "text"
+        "text": "导出配置",
+        "bindControlAttr": "exportOptions",
+        "showType": "dialog",
+        "config": {
+          "content": "DesExportOptions",
+          "width": "1300px",
+          "height": "60vh"
+        },
+        "inCommonUse": true
       }
-
     ]
   }
 ]

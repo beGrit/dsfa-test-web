@@ -1,12 +1,12 @@
 [
-
   {
     "name": "基础属性",
-    "attributes": [{
-      "text": "组件标识",
-      "bindControlAttr": "caption",
-      "showType": "text"
-    },
+    "attributes": [
+      {
+        "text": "组件标识",
+        "bindControlAttr": "caption",
+        "showType": "text"
+      },
       {
         "text": "名称",
         "bindControlAttr": "label",
@@ -18,12 +18,6 @@
         "showType": "boolean"
       },
       {
-        "text": "必填标识",
-        "bindControlAttr": "required",
-        "showType": "boolean",
-        "desc": "<p>当前组件前显示<span style='color:red'>*</span>号，但与实际逻辑上是否必填无关</p>"
-      },
-      {
         "text": "是否只读",
         "showType": "boolean",
         "bindControlAttr": "readOnly"
@@ -31,10 +25,38 @@
     ]
   },
   {
+    "name": "校验属性",
+    "attributes": [
+      {
+        "text": "必填标识",
+        "bindControlAttr": "required",
+        "showType": "boolean",
+        "desc": "<p>当前组件前显示<span style='color:red'>*</span>号，但与实际逻辑上是否必填无关</p>"
+      }
+    ]
+  },
+  {
+    "name": "元数据",
+    "attributes": [
+      {
+        "text": "值属性设置",
+        "bindControlAttr": "metadata.valueAttributes",
+        "showType": "dialog",
+        "config": {
+          "content": "DesValueAttributes",
+          "width": "50vw",
+          "height": "50vh",
+          "buttonText": "设置",
+          "title": "设置"
+        }
+      }
+    ]
+  },
+  {
     "name": "高级属性",
     "attributes": [
       {
-        "text": "二次开发配置",
+        "text": "动态属性绑定",
         "bindControlAttr": "development",
         "showType": "dialog",
         "config": {
@@ -77,28 +99,6 @@
         "text": "图片选择",
         "bindControlAttr": "backgroundSelectUrl",
         "showType": "text"
-      },
-      {
-        "text": "图片选择框大小",
-        "bindControlAttr": "backgroundSelectSize",
-        "showType": "text"
-      },
-      {
-        "text": "图片选择框返回属性",
-        "bindControlAttr": "backgroundSelectAttr",
-        "showType": "text"
-      },
-      {
-        "text": "值属性设置",
-        "bindControlAttr": "metadata.valueAttributes",
-        "showType": "dialog",
-        "config": {
-          "content": "DesValueAttributes",
-          "width": "600px",
-          "height": "60vh",
-          "buttonText": "设置",
-          "title": "设置"
-        }
       }
     ]
   }

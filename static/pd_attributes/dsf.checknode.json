@@ -25,7 +25,7 @@
         "text": "是否呈现标签样式",
         "bindControlAttr": "showTab",
         "showType": "boolean",
-        "hidden": "@[slots].length==1"
+        "showExpress": "@[slots].length==1"
       }
     ]
   },
@@ -48,7 +48,7 @@
         "text": "选择值展现样式",
         "bindControlAttr": "typeStyle",
         "showType": "select",
-        "hidden": "@[slots].length==1",
+        "showExpress": "@[slots].length==1",
         "dictionary": [
           {
             "text": "列表式",
@@ -59,6 +59,21 @@
             "value": "tree"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "高级属性",
+    "attributes": [
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
       }
     ]
   }

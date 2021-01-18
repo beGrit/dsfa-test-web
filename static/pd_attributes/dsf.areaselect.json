@@ -63,7 +63,7 @@
         "text": "上级编码",
         "showType": "text",
         "bindControlAttr": "fixedCode",
-        "hidden": "@[range[0]]!=0",
+        "showExpress": "@[range[0]]!=0",
         "desc": "<p>第一级别的父级编码，例如:</p><p>当你的第一级别为 “市” 时，你需要提供指定 “省” 的编码</p><p>当你的第一级别是 “区” 时，你需要提供指定 “市” 的编码</p>"
       },
       {
@@ -85,7 +85,7 @@
         "text": "是否自动选择下一级第一个",
         "showType": "boolean",
         "bindControlAttr": "autoSelect",
-        "hidden": "@[displayMode]==1"
+        "showExpress": "@[displayMode]==1"
       }
     ]
   },
@@ -139,13 +139,23 @@
     "name": "高级属性",
     "attributes": [
       {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
+      },
+      {
         "text": "值属性设置",
         "bindControlAttr": "metadata.valueAttributes",
         "showType": "dialog",
         "config": {
           "content": "DesValueAttributes",
-          "width": "600px",
-          "height": "60vh",
+          "width": "50vw",
+          "height": "50vh",
           "buttonText": "设置",
           "title": "设置"
         }

@@ -25,6 +25,16 @@
         "text": "是否可见",
         "showType": "boolean",
         "bindControlAttr": "visible"
+      },
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
       }
     ]
   }

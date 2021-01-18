@@ -1,6 +1,8 @@
-[{
+[
+  {
     "name": "基础属性",
-    "attributes": [{
+    "attributes": [
+      {
         "text": "组件标识",
         "bindControlAttr": "caption",
         "showType": "text"
@@ -27,11 +29,6 @@
         "changeExecFunction": "renderSearchDom"
       },
       {
-        "text": "显示节点图标",
-        "showType": "boolean",
-        "bindControlAttr": "showIcon"
-      },
-      {
         "text": "启用虚拟根目录",
         "showType": "boolean",
         "bindControlAttr": "openWebroot",
@@ -42,14 +39,27 @@
         "text": "虚拟根目录节点名称",
         "bindControlAttr": "webrootName",
         "showType": "text",
-        "hidden": "@[openWebroot]==true",
+        "showExpress": "@[openWebroot]==true",
         "changeExecFunction": "reLoadData"
+      },
+      {
+        "text": "图标配置",
+        "bindControlAttr": "icons",
+        "changeExecFunction": "reLoadData",
+        "showType": "dialog",
+        "config": {
+          "title": "导航树图标配置",
+          "content": "TreeIconEdit",
+          "height": "60vh",
+          "width": "800px"
+        }
       }
     ]
   },
   {
     "name": "数据设置",
-    "attributes": [{
+    "attributes": [
+      {
         "text": "查询条件设置",
         "showType": "dialog",
         "bindControlAttr": "searchInfo",
@@ -63,7 +73,8 @@
             "type": "1"
           }
         }
-      }, {
+      },
+      {
         "text": "根节点数据",
         "bindControlAttr": "pId",
         "showType": "text"
@@ -83,15 +94,21 @@
         "text": "初始化数据来源",
         "bindControlAttr": "initDataSource",
         "showType": "select",
-        "dictionary": [{
+        "dictionary": [
+          {
             "text": "页面元数据",
             "value": "1"
           },
           {
             "text": "元数据组",
             "value": "2"
+          },
+          {
+            "text": "自定义接口",
+            "value": "3"
           }
-        ]
+        ],
+        "desc":"<p>选择自定义接口，将不会使用异步加载</p>"
       },
       {
         "text": "初始化元数据组选择",
@@ -103,7 +120,14 @@
           "buttonText": "选择",
           "title": "请选择"
         },
-        "hidden": "@[initDataSource]==='2'"
+        "showExpress": "@[initDataSource]==='2'"
+      },
+      {
+        "text": "自定义接口地址",
+        "bindControlAttr": "initDataSourceUrl",
+        "showType": "text",
+        "showExpress": "@[initDataSource]==='3'",
+        "desc":"<p>数据结构需为：<br/>&nbsp;&nbsp;[{<br/>&nbsp;&nbsp;&nbsp;&nbsp;_id：'节点唯一标识',<br/>&nbsp;&nbsp;&nbsp;&nbsp;_name：'节点名称',<br/>&nbsp;&nbsp;&nbsp;&nbsp;children：[&nbsp;],<br/>&nbsp;&nbsp;}]</p>"
       },
       {
         "text": "初始化展开至第几级",
@@ -126,9 +150,10 @@
       {
         "text": "异步请求数据来源",
         "bindControlAttr": "asyncDataSource",
-        "hidden": "@[async]===true",
+        "showExpress": "@[async]===true",
         "showType": "select",
-        "dictionary": [{
+        "dictionary": [
+          {
             "text": "页面元数据",
             "value": "1"
           },
@@ -151,13 +176,14 @@
             "exclude": "ds"
           }
         },
-        "hidden": "@[asyncDataSource]==='2'"
+        "showExpress": "@[asyncDataSource]==='2'"
       }
     ]
   },
   {
     "name": "高级属性",
-    "attributes": [{
+    "attributes": [
+      {
         "text": "元数据设置",
         "showType": "dialog",
         "bindControlAttr": "metadata.valueAttributes",
@@ -183,7 +209,7 @@
         }
       },
       {
-        "text": "二次开发配置",
+        "text": "动态属性绑定",
         "bindControlAttr": "development",
         "showType": "dialog",
         "config": {
