@@ -153,6 +153,7 @@ div.edui-box {
     box-shadow:0 1px 4px rgba(204, 204, 204, 0.6);
     border-top-left-radius:2px;
     border-top-right-radius:2px;
+    z-index: 1;
 }
 
 .edui-default .edui-editor-toolbarboxouter {
@@ -181,6 +182,7 @@ div.edui-box {
 
 .edui-default .edui-editor-iframeholder {
     position: relative;
+    /* z-index: 1; */
     /*for fix ie6 toolbarmsg under iframe bug. relative -> static */
     /*_position: static !important;*
 }
@@ -201,6 +203,9 @@ div.edui-box {
 
 .edui-default .edui-editor-bottomContainer {
     overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
 }
 
 .edui-default .edui-editor-bottomContainer table {

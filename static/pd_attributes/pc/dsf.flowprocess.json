@@ -1,0 +1,50 @@
+[
+  {
+    "name": "基础属性",
+    "attributes": [
+      {
+        "text": "组件标识",
+        "bindControlAttr": "caption",
+        "showType": "text",
+        "config": {
+          "disabled": true
+        }
+      },
+      {
+        "text": "隐藏右上角复选框",
+        "bindControlAttr": "hideCheckbox",
+        "showType": "boolean"
+      },
+      {
+        "text": "隐藏异常环节",
+        "bindControlAttr": "hideNode",
+        "showType": "boolean"
+      },
+      {
+        "text": "隐藏无意见环节",
+        "bindControlAttr": "hideYj",
+        "showType": "boolean"
+      },
+      {
+        "text": "显示处理结果",
+        "bindControlAttr": "showResult",
+        "showType": "boolean"
+      },
+      {
+        "text": "处理意见为空显示",
+        "bindControlAttr": "processingOpinion",
+        "showType": "text"
+      },
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
+      }
+    ]
+  }
+]

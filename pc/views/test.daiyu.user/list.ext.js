@@ -63,22 +63,23 @@ dsf.define(function () {
         }
       },
       rowDelFn(row) {
-        var loading = dsf.layer.loading({
-          text: '加载中',
-          background: 'red'
-        });
-        console.log(row.data['test_daiyu_user.name']);
-        this.$http.get('/user/getName?name=张三')
-          .done(function (res) {
+        alert("111");
+        // var loading = dsf.layer.loading({
+        //   text: '加载中',
+        //   background: 'red'
+        // });
+        // console.log(row.data['test_daiyu_user.name']);
+        // this.$http.get('/user/getName?name=张三')
+        //   .done(function (res) {
 
-          })
-          .error(function () {
-            //错误
-          })
-          .always(function () {
-            //肯定会执行
-            loading.close();
-          })
+        //   })
+        //   .error(function () {
+        //     //错误
+        //   })
+        //   .always(function () {
+        //     //肯定会执行
+        //     loading.close();
+        //   })
       }
     }
   }
