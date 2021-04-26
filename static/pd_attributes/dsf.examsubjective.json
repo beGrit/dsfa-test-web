@@ -22,6 +22,16 @@
         "text": "可输入字数最大限制",
         "bindControlAttr": "maxLength",
         "showType": "text"
+      },
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
       }
     ]
   }

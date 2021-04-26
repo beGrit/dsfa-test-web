@@ -57,7 +57,7 @@
         "text": "只读状态简版",
         "showType": "boolean",
         "bindControlAttr": "simple",
-        "desc": "<p>简化组件只读状态时的元素。如果组件在子表中加载可以有效提升表格性能<p>"
+        "desc": "<p>简化组件只读状态的dom元素<p>"
       },
       {
         "text": "只读状态下格式化",
@@ -111,7 +111,8 @@
       {
         "text": "是否可搜索",
         "bindControlAttr": "filterable",
-        "showType": "boolean"
+        "showType": "boolean",
+        "desc": "<p>通过“:filter-method=\"fun\"”设置自定义搜索的方法<br/>fun为Function类型，function(node, keyword) 第一个参数是节点node，第二个参数是搜索关键词keyword，通过返回布尔值表示是否命中</p>"
       },
       {
         "text": "是否可选择任意一级",
@@ -127,7 +128,7 @@
         "text": "是否合并标签",
         "bindControlAttr": "collapseTags",
         "showType": "boolean",
-        "hidden": "@[multiple] == true"
+        "showExpress": "@[multiple] == true"
       },
       {
         "text": "次级菜单的展开方式",
@@ -143,6 +144,12 @@
             "value": "hover"
           }
         ]
+      },
+      {
+        "text": "是否懒加载",
+        "bindControlAttr": "lazy",
+        "showType": "boolean",
+        "desc": "<p>通过“:lazyLoad=\"fun\"”设置加载动态数据的方法<br/>fun为Function类型，function(node, resolve)，node为当前点击的节点，resolve为数据加载完成的回调(必须调用)</p>"
       },
       {
         "text": "选项值对应的字段名",
@@ -208,14 +215,15 @@
     ]
   },
   {
-    "name": "高级属性",
+    "name": "元数据",
     "attributes": [
       {
         "text": "默认值",
         "bindControlAttr": "metadata.defaultValue",
         "showType": "dialog",
         "config": {
-          "width": "500px",
+          "width": "50vw",
+          "height": "50vh",
           "content": "DesDefaultValue",
           "multiple": true,
           "value": [
@@ -226,22 +234,27 @@
         "desc": "<p>当前组件在页面中初始化后显示的值，可支持@[xxxx]形式的表达式</p>"
       },
       {
-        "text": "描述文字",
-        "showType": "text",
-        "bindControlAttr": "dataCapion",
-        "desc": "<p>移动端运行该组件时会在名称后追加一段备注文字。</p><p>因布局上的问题PC端暂不支持</p>"
-      },
-      {
         "text": "值属性设置",
         "bindControlAttr": "metadata.valueAttributes",
         "showType": "dialog",
         "config": {
           "content": "DesValueAttributes",
-          "width": "600px",
-          "height": "60vh",
+          "width": "50vw",
+          "height": "50vh",
           "buttonText": "设置",
           "title": "设置"
         }
+      }
+    ]
+  },
+  {
+    "name": "高级属性",
+    "attributes": [
+      {
+        "text": "描述文字",
+        "showType": "text",
+        "bindControlAttr": "dataCapion",
+        "desc": "<p>移动端运行该组件时会在名称后追加一段备注文字。</p><p>因布局上的问题PC端暂不支持</p>"
       },
       {
         "text": "是否可以提交",
@@ -254,7 +267,7 @@
         "showType": "boolean"
       },
       {
-        "text": "二次开发配置",
+        "text": "动态属性绑定",
         "bindControlAttr": "development",
         "showType": "dialog",
         "config": {

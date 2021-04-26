@@ -31,5 +31,20 @@
         "bindControlAttr": "$lazyLoad"
       }
     ]
+  },
+  {
+    "name": "高级属性",
+    "attributes": [
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
+      }
+    ]
   }
 ]

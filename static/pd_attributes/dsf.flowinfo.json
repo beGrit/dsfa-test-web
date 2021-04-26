@@ -14,7 +14,7 @@
         "text": "流程设置",
         "showType": "dialog",
         "bindControlAttr": "chooseFlow",
-        "hidden": "@[chooseFlow.ID==null]",
+        "showExpress": "@[chooseFlow.ID==null]",
         "changeExecFunction": "linkSetChooseFlow",
         "config": {
           "title": "流程设置",
@@ -27,7 +27,7 @@
         "text": "流程设置",
         "showType": "dialog",
         "bindControlAttr": "linkData",
-        "hidden": "@[chooseFlow.ID!==null]",
+        "showExpress": "@[chooseFlow.ID!==null]",
         "config": {
           "title": "流程设置",
           "content": "linkSet",
@@ -41,6 +41,21 @@
         "showType": "select",
         "dictionaryControl": true,
         "dictionary": []
+      },
+      {
+        "text": "发送成功弹窗关闭倒计时",
+        "bindControlAttr": "countDown",
+        "showType": "text"
+      },
+      {
+        "text": "动态属性绑定",
+        "bindControlAttr": "development",
+        "showType": "dialog",
+        "config": {
+          "content": "DesDevelopment",
+          "width": "1000px",
+          "height": "60vh"
+        }
       }
     ]
   }

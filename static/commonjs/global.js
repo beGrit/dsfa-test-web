@@ -2,3 +2,8 @@
 window.$$validate={
   
 }
+window.$$func={
+  "demo":function(){
+    alert()
+  }
+}
