@@ -56,39 +56,59 @@ dsf.define(function () {
     saveComplete: function (result) {},
     //=======二次开发额外增加的钩子函数 end   ===============
     methods: {
-      choiceTeacher(res) {
-        console.log(res.args)
-        // xxxx代表子表标识
-        var namespace1 = 'test_lsf_nc_kjk_teachers.';
-        var namespace2 = 'test_lsf_nc_szgl.';
-        var $table = this.$refs.teachers;
-        _.forEach(res.args, function (it) {
-          // 去重
-          var flag = true;
-          for (let item of $table.allList) {
-            if (it[namespace2 + 'test_lsf_nc_szgl_id'] === item[namespace1 + 'teacher_id']) {
-              flag = false;
-              break;
-            }
-          }
+      enable(row) {
+        // 发送网络请求 (携带 主键test_lsf_nc_kjk.test_lsf_nc_kjk(_id))
+        var data = row['data'];
+        var _id = data['_id'];
 
-          // 冗余字段复制
-          if (flag) {
-            var data = {};
-            data[namespace1 + 'name'] = it[namespace2 + 'name'];
-            data[namespace1 + 'gzdw'] = it[namespace2 + 'gzdw'];
-            // data[namespace1 + 'zw'] = it[namespace2 + 'zw'];
-            // data[namespace1 + 'zc'] = it[namespace2 + 'zc'];
-            // data[namespace1 + 'zj'] = it[namespace2 + 'zj'];
-            data[namespace1 + 'teacher_id'] = it['_id'];
-            console.log(data)
-            // 将新数据追加到子表中
-            $table.pushRow(data);
-          }
-        });
+        // 添加遮罩
+        var loading = dsf.layer.loading();
+
+        // 发送网络请求
+        if (_id !== undefined) {
+          let promise = this.$http.post('/test/lsf/nc/kjgl/kjList/enable?id=' + _id);
+          promise
+            .done((res) => {
+              if (res.success === false) {
+                throw new Error(res.message);
+              } else {
+                this.reloadData();
+              }
+            })
+            .error(reason => {
+              dsf.layer.message(reason && reason.message || '请求异常', false);
+            });
+        }
+
+        //取消遮罩
+        dsf.layer.closeLoading(loading);
       },
-      callbackFn(res) {
-        console.log(res);
+      disable(row) {
+        // 发送网络请求 (携带 主键test_lsf_nc_kjk.test_lsf_nc_kjk(_id))
+        var data = row['data'];
+        var _id = data['_id'];
+
+        // 添加遮罩
+        var loading = dsf.layer.loading();
+
+        // 发送网络请求
+        if (_id !== undefined) {
+          let promise = this.$http.post('/test/lsf/nc/kjgl/kjList/disable?id=' + _id);
+          promise
+            .done((res) => {
+              if (res.success === false) {
+                throw new Error(res.message);
+              } else {
+                this.reloadData();
+              }
+            })
+            .error(reason => {
+              dsf.layer.message(reason && reason.message || '请求异常', false);
+            });
+        }
+
+        //取消遮罩
+        dsf.layer.closeLoading(loading);
       }
     }
   }

@@ -56,17 +56,17 @@ dsf.define(function () {
     saveComplete: function (result) {},
     //=======二次开发额外增加的钩子函数 end   ===============
     methods: {
-      choiceTeacher(res) {
+      choiceKj(res) {
         console.log(res.args)
         // xxxx代表子表标识
-        var namespace1 = 'test_lsf_nc_kjk_teachers.';
-        var namespace2 = 'test_lsf_nc_szgl.';
-        var $table = this.$refs.teachers;
+        var namespace1 = 'test_lsf_nc_kcgl_kj.';
+        var namespace2 = 'test_lsf_nc_kjk.';
+        var $table = this.$refs.kj;
         _.forEach(res.args, function (it) {
           // 去重
           var flag = true;
           for (let item of $table.allList) {
-            if (it[namespace2 + 'test_lsf_nc_szgl_id'] === item[namespace1 + 'teacher_id']) {
+            if (it['_id'] === item[namespace1 + 'kj_id']) {
               flag = false;
               break;
             }
@@ -76,19 +76,14 @@ dsf.define(function () {
           if (flag) {
             var data = {};
             data[namespace1 + 'name'] = it[namespace2 + 'name'];
-            data[namespace1 + 'gzdw'] = it[namespace2 + 'gzdw'];
-            // data[namespace1 + 'zw'] = it[namespace2 + 'zw'];
-            // data[namespace1 + 'zc'] = it[namespace2 + 'zc'];
-            // data[namespace1 + 'zj'] = it[namespace2 + 'zj'];
-            data[namespace1 + 'teacher_id'] = it['_id'];
+            data[namespace1 + 'video_duration'] = it[namespace2 + 'video_duration'];
+            // data[namespace1 + 'type'] = it[namespace2 + 'type'];
+            data[namespace1 + 'kj_id'] = it['_id'];
             console.log(data)
             // 将新数据追加到子表中
             $table.pushRow(data);
           }
         });
-      },
-      callbackFn(res) {
-        console.log(res);
       }
     }
   }

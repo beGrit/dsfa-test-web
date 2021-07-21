@@ -56,7 +56,115 @@ dsf.define(function () {
     saveComplete: function (result) {},
     //=======二次开发额外增加的钩子函数 end   ===============
     methods: {
+      enable(row) {
+        // 发送网络请求 (携带 主键test_lsf_nc_kjk.test_lsf_nc_kjk(_id))
+        var data = row['data'];
+        var _id = data['_id'];
 
+        // 添加遮罩
+        var loading = dsf.layer.loading();
+
+        // 发送网络请求
+        if (_id !== undefined) {
+          let promise = this.$http.post('/test/lsf/nc/szgl/szList/enable?id=' + _id);
+          promise
+              .done((res) => {
+                if (res.success === false) {
+                  throw new Error(res.message);
+                } else {
+                  this.reloadData();
+                }
+              })
+              .error(reason => {
+                dsf.layer.message(reason && reason.message || '请求异常', false);
+              });
+        }
+
+        //取消遮罩
+        dsf.layer.closeLoading(loading);
+      },
+      disable(row) {
+        // 发送网络请求 (携带 主键test_lsf_nc_kjk.test_lsf_nc_kjk(_id))
+        var data = row['data'];
+        var _id = data['_id'];
+
+        // 添加遮罩
+        var loading = dsf.layer.loading();
+
+        // 发送网络请求
+        if (_id !== undefined) {
+          let promise = this.$http.post('/test/lsf/nc/szgl/szList/disable?id=' + _id);
+          promise
+              .done((res) => {
+                if (res.success === false) {
+                  throw new Error(res.message);
+                } else {
+                  this.reloadData();
+                }
+              })
+              .error(reason => {
+                dsf.layer.message(reason && reason.message || '请求异常', false);
+              });
+        }
+
+        //取消遮罩
+        dsf.layer.closeLoading(loading);
+      },
+      top(row) {
+        // 发送网络请求 (携带 主键test_lsf_nc_kjk.test_lsf_nc_kjk(_id))
+        var data = row['data'];
+        var _id = data['_id'];
+
+        // 添加遮罩
+        var loading = dsf.layer.loading();
+
+        // 发送网络请求
+        if (_id !== undefined) {
+          let promise = this.$http.post('/test/lsf/nc/szgl/szList/top?id=' + _id);
+          promise
+            .done((res) => {
+              if (res.success === false) {
+                throw new Error(res.message);
+              } else {
+                this.reloadData();
+              }
+            })
+            .error(reason => {
+              dsf.layer.message(reason && reason.message || '请求异常', false);
+            });
+        }
+
+        // 取消遮罩
+        dsf.layer.closeLoading(loading);
+      },
+      sync(row) {
+        // 发送网络请求 (携带 主键test_lsf_nc_kjk.test_lsf_nc_kjk(_id))
+        var data = row['data'];
+        var _id = data['_id'];
+
+        // 添加遮罩
+        var loading = dsf.layer.loading();
+
+        // 发送网络请求
+        if (_id !== undefined) {
+          let promise = this.$http.post('/test/lsf/nc/szgl/szList/sync?id=' + _id);
+          promise
+            .done((res) => {
+              if (res.success === false) {
+                throw new Error(res.message);
+              } else {
+                this.reloadData();
+              }
+            })
+            .error(reason => {
+              dsf.layer.message(reason && reason.message || '请求异常', false);
+            });
+        }
+
+        // 取消遮罩
+        dsf.layer.closeLoading(loading);
+      },
+      authorization(row) {}
     }
   }
 });

@@ -56,7 +56,14 @@ dsf.define(function () {
     saveComplete: function (result) {},
     //=======二次开发额外增加的钩子函数 end   ===============
     methods: {
-      
+      yes: function () {
+        return [{
+          a: 1
+        }]
+      },
+      dataaddResultHandle(res) {
+        console.log(res)
+      }
     }
   }
 });
